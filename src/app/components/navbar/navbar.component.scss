@@ -11,6 +11,8 @@
 .navbar {
     height: 150px;
     width: 100%;
+    background-color: #fefefe;
+    border-bottom: 2px solid lightgray;
     &>* {
         justify-content: center;
         margin: 0 auto;
@@ -29,6 +31,11 @@
         }
     }
     &>.nav-items {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: transparent;
         &>.right {
             display: flex;
             flex-direction: row;
@@ -38,10 +45,19 @@
             align-items: center;
             align-self: center;
             padding: 10px;
+            background-color: transparent;
+        }
+        &>.left {
+            background-color: transparent;
+            & img {
+                background-color: transparent;
+            }
         }
         & button {
+            background-color: transparent;
             border: 0;
             font-size: 16px;
+            font-weight: 700;
             text-transform: uppercase;
             padding: 15px 30px;
             justify-content: center;
