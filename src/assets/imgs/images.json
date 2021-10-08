@@ -1,0 +1,19 @@
+{
+    "images": [{
+            "name": "1.jpg",
+            "alt": "kep"
+        },
+        {
+            "name": "2.jpg",
+            "alt": "kep"
+        },
+        {
+            "name": "3.jpg",
+            "alt": "kep"
+        },
+        {
+            "name": "4.jpg",
+            "alt": "kep"
+        }
+    ]
+}

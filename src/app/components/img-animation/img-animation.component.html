@@ -1,1 +1,10 @@
-<p>img-animation works!</p>
+<div class="image_container">
+    <div class="images">
+        <div class="image left_img" *ngIf="imgs[actualImg]">
+            <img src="../../../assets/imgs/{{ imgs[actualImg].name }}" alt="{{ imgs[actualImg].alt }}">
+        </div>
+        <div class="image right_img" *ngIf="imgs[nextImg]">
+            <img src="../../../assets/imgs/{{ imgs[nextImg].name }}" alt="{{ imgs[nextImg].alt }}">
+        </div>
+    </div>
+</div>

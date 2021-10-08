@@ -1,0 +1,22 @@
+div {
+    & .image_container {
+        height: 500px;
+        overflow: hidden;
+    }
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    overflow: hidden;
+    &>img {
+        position: relative;
+        width: 100%;
+    }
+    & .right_img {
+        width: 0;
+    }
+}
