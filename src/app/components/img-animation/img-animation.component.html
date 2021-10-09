@@ -1,10 +1,19 @@
-<div class="image_container">
-    <div class="images">
-        <div class="image left_img" *ngIf="imgs[actualImg]">
-            <img src="../../../assets/imgs/{{ imgs[actualImg].name }}" alt="{{ imgs[actualImg].alt }}">
-        </div>
-        <div class="image right_img" *ngIf="imgs[nextImg]">
-            <img src="../../../assets/imgs/{{ imgs[nextImg].name }}" alt="{{ imgs[nextImg].alt }}">
+<div class="container flex-main-width">
+    <div class="images flex-main-width">
+        <div class="image" *ngFor="let img of imgs; let i = index">
+            <div class="{{ i == 0 ? 'img active' : 'img hidden' }}" attr.data-number="{{i}}" attr.style="z-index: {{ imgs.length - i }}; background-image: url(../../../assets/imgs/{{ img.name }})">
+                <div [attr.class]="'content ' + img.float">
+                    <div class="title">
+                        <!-- {{ img.title }} -->
+                        Lorem ipsum dolor sit amet.
+                    </div>
+                    <div class="text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium saepe magni odit nisi dolor, nulla voluptates ullam perferendis, modi iure laborum placeat totam repellat. Nihil itaque aliquam animi consequatur! Soluta laboriosam
+                        debitis velit harum distinctio delectus nulla molestias? Sit et enim voluptatem in quidem suscipit voluptate ea autem similique!
+                        <!-- {{ img.text }} -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ImgAnimationComponent } from './components/img-animation/img-animation.component';
 import {HttpClientModule} from '@angular/common/http';
+import { IconContainerComponent } from './components/icon-container/icon-container.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ImgAnimationComponent
+    ImgAnimationComponent,
+    IconContainerComponent
   ],
   imports: [
     BrowserModule,
