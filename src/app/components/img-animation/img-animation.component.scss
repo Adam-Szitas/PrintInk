@@ -29,7 +29,6 @@
             justify-content: center;
             overflow: hidden;
             & .img {
-                @extend .flex-main-width;
                 position: relative;
                 justify-content: center;
                 align-items: center;
@@ -88,6 +87,3 @@
         }
     }
 }
-
-//mobile version
-@media screen and (max-width: 900px) {}

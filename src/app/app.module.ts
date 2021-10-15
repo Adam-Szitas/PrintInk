@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ImgAnimationComponent } from './components/img-animation/img-animation.component';
 import {HttpClientModule} from '@angular/common/http';
 import { IconContainerComponent } from './components/icon-container/icon-container.component';
+import { RouterModule } from '@angular/router';
+import { IconSetContainerComponent } from './components/icon-set-container/icon-set-container.component';
 
 
 @NgModule({
@@ -16,12 +18,18 @@ import { IconContainerComponent } from './components/icon-container/icon-contain
     NavbarComponent,
     HomeComponent,
     ImgAnimationComponent,
-    IconContainerComponent
+    IconContainerComponent,
+    IconSetContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: '', component: HomeComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

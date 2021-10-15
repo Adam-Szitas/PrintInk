@@ -1,0 +1,23 @@
+@import '../../width.scss';
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    & .icons {
+        width: 25%;
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+        & img {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            margin: 15px;
+        }
+    }
+}

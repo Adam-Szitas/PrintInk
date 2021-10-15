@@ -1,7 +1,7 @@
-<div class="container flex-main-width">
-    <div class="images flex-main-width">
+<div class="container">
+    <div class="images">
         <div class="image" *ngFor="let img of imgs; let i = index">
-            <div class="{{ i == 0 ? 'img active' : 'img hidden' }}" attr.data-number="{{i}}" attr.style="z-index: {{ imgs.length - i }}; background-image: url(../../../assets/imgs/{{ img.name }})">
+            <div class="{{ i == 0 ? 'img active' : 'img hidden' }}" attr.data-number="{{i}}" attr.style="z-index: {{ imgs.length - i }}; background-image: url(assets/imgs/{{ img.name }})">
                 <div [attr.class]="'content ' + img.float">
                     <div class="title">
                         <!-- {{ img.title }} -->
