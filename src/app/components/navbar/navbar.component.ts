@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public toggle(event:HTMLElement){
+    if(event.classList.contains('visible')){
+      event.classList.remove('visible');
+    }else{
+      event.classList.add('visible');
+    }
+  }
+  public marketing(){
+    window.open('https://onlinecatalog.malfini.com/01275686/sk/catalog','_blank');
   }
 
 }

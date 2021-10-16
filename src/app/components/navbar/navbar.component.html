@@ -4,9 +4,25 @@
             <button class="logo"><img src="assets/logo/print_ink.jpg" alt="PresWeb"></button>
         </div>
         <div class="right">
-            <button class="nav-button" type="button">Marketing</button>
-            <button class="nav-button" type="button">DropDown</button>
-            <button class="nav-button" type="button">About Us</button>
+            <div>
+                <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
+            </div>
+            <div>
+                <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button">Služby</button>
+                <div class="dropdown" #DropDown>
+                    <button class="nav-button">Egy</button>
+                    <button class="nav-button">Egy</button>
+                    <button class="nav-button">Egy</button>
+                    <button class="nav-button">Egy</button>
+                    <button class="nav-button">Egy</button>
+                </div>
+            </div>
+            <div>
+                <button class="nav-button" type="button">galéria</button>
+            </div>
+            <div>
+                <button class="nav-button" type="button">kontakt</button>
+            </div>
         </div>
     </div>
 </div>

@@ -12,7 +12,7 @@
     height: 100px;
     width: 100%;
     background-color: white;
-    border-bottom: 5px solid $blue;
+    border-bottom: 2px solid darkgrey;
     &>* {
         justify-content: center;
         margin: 0 auto;
@@ -52,9 +52,38 @@
             align-self: center;
             padding: 10px;
             background-color: transparent;
-            & button:first() {
-                font-weight: bolder;
-                text-decoration: underline;
+            & > div{
+                display: flex;
+                align-items: center;
+                align-self: center;
+                justify-content: center;
+                
+            }
+            & > div:first(){
+
+                & button:first() {
+                    font-weight: bolder;
+                    text-decoration: underline;
+                }
+            }
+            & .dropdown{
+                opacity: 0;
+                position: absolute;
+                margin-top: 80px;
+                top: 0;
+                height: auto;
+                border: 1px solid black;
+                transition: all 0.2s ease-in-out;
+                &.visible{
+                    opacity: 1;
+                }
+                & .nav-button{
+                    display: block;
+                    background-color: white;
+                    &:hover{
+                        background-color: $blue
+                    }
+                }
             }
         }
         &>.left {
@@ -83,8 +112,8 @@
                 cursor: pointer;
             }
             &:hover:not(.logo) {
-                background-color: $blue;
-                color: white;
+                background-color: white;
+                color: $blue;
             }
         }
         & button:not(.logo) {
