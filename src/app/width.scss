@@ -1,16 +1,34 @@
 @media screen and (min-width: 1920px) {
+    .nav_wide {
+        display: flex !important;
+    }
+    .nav_tall {
+        display: none !important;
+    }
     .flex-main-width {
         max-width: 1919px !important;
     }
 }
 
 @media screen and (max-width: 1919px) {
+    .nav_wide {
+        display: flex !important;
+    }
+    .nav_tall {
+        display: none !important
+    }
     .flex-main-width {
         max-width: 1279px !important;
     }
 }
 
 @media screen and (max-width: 1280px) {
+    .nav_tall {
+        display: block !important;
+    }
+    .nav_wide {
+        display: none !important;
+    }
     .flex-main-width {
         max-width: 767px !important;
     }

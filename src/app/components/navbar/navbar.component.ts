@@ -13,7 +13,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public toggle(event:HTMLElement){
+  public toggle(event:HTMLElement,navbar: HTMLElement,height:string){
+    console.log(event?.attributes.getNamedItem('data-element="tall-dropdown"'));
+
     if(event.classList.contains('visible')){
       event.classList.remove('visible');
     }else{

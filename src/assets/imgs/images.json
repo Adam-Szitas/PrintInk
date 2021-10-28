@@ -2,30 +2,42 @@
     "images": [{
             "name": "1.jpg",
             "alt": "kep",
-            "title": "Test Title 1",
-            "text": "Text text 1",
+            "title_highlighted": "TLAČ",
+            "title": "REKLAMNÝCH LETÁKOV",
+            "text": "Prilákajte pozornosť zákazníkov pomocou letákov – jednostranových alebo skladaných. Letáky sú jedným z najúčinnejších spôsobov prezentácie Vašich produktov a služieb v optimálnom formáte. My ponúkáme v súčastnsoti A5, 1000 letákov od 59€!",
             "float": "left"
         },
         {
             "name": "2.jpg",
             "alt": "kep",
-            "title": "Test Title 2",
-            "text": "Text text 2",
+            "title_highlighted": "TLAČ",
+            "title": "REKLAMNÝCH LETÁKOV",
+            "text": "Prilákajte pozornosť zákazníkov pomocou letákov – jednostranových alebo skladaných. Letáky sú jedným z najúčinnejších spôsobov prezentácie Vašich produktov a služieb v optimálnom formáte. My ponúkáme v súčastnsoti A5, 1000 letákov od 59€!",
             "float": "right"
         },
         {
             "name": "3.jpg",
             "alt": "kep",
-            "title": "Test Title 3",
-            "text": "Text text 3",
+            "title_highlighted": "TLAČ",
+            "title": "REKLAMNÝCH LETÁKOV",
+            "text": "Prilákajte pozornosť zákazníkov pomocou letákov – jednostranových alebo skladaných. Letáky sú jedným z najúčinnejších spôsobov prezentácie Vašich produktov a služieb v optimálnom formáte. My ponúkáme v súčastnsoti A5, 1000 letákov od 59€!",
             "float": "left"
         },
         {
             "name": "4.jpg",
             "alt": "kep",
-            "title": "Test Title 4",
-            "text": "sadfaf",
+            "title_highlighted": "TLAČ",
+            "title": "REKLAMNÝCH LETÁKOV",
+            "text": "Prilákajte pozornosť zákazníkov pomocou letákov – jednostranových alebo skladaných. Letáky sú jedným z najúčinnejších spôsobov prezentácie Vašich produktov a služieb v optimálnom formáte. My ponúkáme v súčastnsoti A5, 1000 letákov od 59€!",
             "float": "right"
+        },
+        {
+            "name": "5.jpg",
+            "alt": "kep",
+            "title_highlighted": "TLAČ",
+            "title": "REKLAMNÝCH LETÁKOV",
+            "text": "Prilákajte pozornosť zákazníkov pomocou letákov – jednostranových alebo skladaných. Letáky sú jedným z najúčinnejších spôsobov prezentácie Vašich produktov a služieb v optimálnom formáte. My ponúkáme v súčastnsoti A5, 1000 letákov od 59€!",
+            "float": "left"
         }
     ]
 }

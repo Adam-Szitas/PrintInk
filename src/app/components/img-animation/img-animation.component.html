@@ -4,13 +4,15 @@
             <div class="{{ i == 0 ? 'img active' : 'img hidden' }}" attr.data-number="{{i}}" attr.style="z-index: {{ imgs.length - i }}; background-image: url(assets/imgs/{{ img.name }})">
                 <div [attr.class]="'content ' + img.float">
                     <div class="title">
-                        <!-- {{ img.title }} -->
-                        Lorem ipsum dolor sit amet.
+                        <span class="title_highlighted">
+                        {{ img.title_highlighted }}
+                      </span>
+                        <span class="title">
+                        {{ img.title }}
+                      </span>
                     </div>
                     <div class="text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium saepe magni odit nisi dolor, nulla voluptates ullam perferendis, modi iure laborum placeat totam repellat. Nihil itaque aliquam animi consequatur! Soluta laboriosam
-                        debitis velit harum distinctio delectus nulla molestias? Sit et enim voluptatem in quidem suscipit voluptate ea autem similique!
-                        <!-- {{ img.text }} -->
+                        {{ img.text }}
                     </div>
                 </div>
             </div>
