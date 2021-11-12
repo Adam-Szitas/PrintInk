@@ -1,0 +1,10 @@
+.contact {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    &.height-0 {
+        height: 0 !important;
+        position: inherit;
+    }
+}
