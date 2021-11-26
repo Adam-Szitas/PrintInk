@@ -9,11 +9,12 @@
 }
 
 .navbar {
-    height: auto;
-    min-height: 100px;
+    height: 100px;
     width: 100%;
     background-color: white;
     border-bottom: 2px solid darkgrey;
+    position: relative;
+    z-index: 10;
     & * {
         justify-content: center;
         margin: 0 auto;
@@ -23,9 +24,6 @@
     }
     & * {
         height: inherit;
-    }
-    *>div {
-        overflow: hidden;
     }
     &>.nav-box {
         background-color: $blue;
@@ -43,6 +41,7 @@
         justify-content: space-between;
         width: 100%;
         background-color: transparent;
+        margin: 0 auto;
         & .right {
             display: flex;
             flex-direction: row;
@@ -53,8 +52,10 @@
             align-self: center;
             padding: 10px;
             background-color: transparent;
-            &>div {
-                display: flex;
+            &>div:not(.display-block) {
+                margin-top: 20px;
+                display: block;
+                text-align: center;
                 align-items: center;
                 align-self: center;
                 justify-content: center;
@@ -84,10 +85,12 @@
         align-self: center;
         display: inline-block;
         transition: all .2s ease-in-out;
+        border: 1px solid transparent !important;
         &>img {
             position: relative;
             overflow: hidden;
             height: inherit;
+            margin-top: -10px;
         }
         &:hover {
             cursor: pointer;
@@ -95,6 +98,10 @@
         &:hover:not(.logo) {
             background-color: white;
             color: $blue;
+            border: 1px solid $blue !important;
+        }
+        &::before {
+            content: '';
         }
     }
     & button:not(.logo) {
@@ -121,24 +128,63 @@
 .dropdown {
     display: none;
     position: absolute;
-    margin-top: 80px;
     top: 0;
-    border: 1px solid black;
     transition: all 0.2s ease-in-out;
+    height: auto !important;
     &.visible {
-        display: block
+        display: block;
+        border-top: 2px solid $blue;
     }
     & .nav-button {
         display: block;
         background-color: white;
-        &:hover {
-            background-color: $blue
+    }
+    &.right_margin {
+        position: absolute;
+        right: 0;
+    }
+    & .drop-button {
+        position: absolute;
+        right: 0;
+    }
+    &[data-element="tall-dropdown"] {
+        position: relative;
+        width: 100%;
+        &>button {
+            position: relative;
+            width: 100%;
         }
     }
+    &.display-block {
+        display: block !important;
+    }
+}
+
+.display-block {
+    display: block !important;
 }
 
 .flex-column {
     display: flex;
+    justify-content: center;
+    text-align: center;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+.nav_tall {
+    &.visible {
+        display: block !important;
+    }
+    & div.visible {
+        display: block !important;
+    }
+    & * {
+        z-index: 10;
+    }
+    & .dropdown {
+        & .dropdown .nav-button {
+            width: 100%;
+        }
+    }
 }
