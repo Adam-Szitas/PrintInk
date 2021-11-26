@@ -10,6 +10,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { IconContainerComponent } from './components/icon-container/icon-container.component';
 import { RouterModule } from '@angular/router';
 import { IconSetContainerComponent } from './components/icon-set-container/icon-set-container.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ToggleContactService } from './services/toggle-contacts.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,19 +22,21 @@ import { IconSetContainerComponent } from './components/icon-set-container/icon-
     HomeComponent,
     ImgAnimationComponent,
     IconContainerComponent,
-    IconSetContainerComponent
+    IconSetContainerComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '', component: HomeComponent
       }
     ])
   ],
-  providers: [],
+  providers: [ToggleContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

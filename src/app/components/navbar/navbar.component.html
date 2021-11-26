@@ -9,7 +9,7 @@
                     <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
                 </div>
                 <div class="flex-column">
-                    <button class="nav-button drop-button" (click)="toggle(DropDown,Navbar,'100px')" type="button">Služby</button>
+                    <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button">Služby</button>
                     <div class="dropdown" #DropDown data-element="wide-dropdown">
                         <button class="nav-button">Egy</button>
                         <button class="nav-button">Egy</button>
@@ -22,27 +22,25 @@
                     <button class="nav-button" type="button">galéria</button>
                 </div>
                 <div>
-                    <button class="nav-button" type="button">kontakt</button>
+                    <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
                 </div>
             </div>
             <div class="right nav_tall">
-                <div class="flex-column">
-                    <button class="nav-button" type="button" (click)="toggle(NavbarDropDown,Navbar,'100px')"><img class="menu_icon" src="../../../assets/logo/menu.png" alt="MENU"></button>
-                    <div class="dropdown" #NavbarDropDown data-element="tall-dropdown">
-                        <button class="nav-button drop-button" (click)="toggle(DropDownMobile,Navbar,'auto')" type="button">Služby</button>
-                        <div class="dropdown" #DropDownMobile data-element="tall-dropdown">
-                            <button class="nav-button">Egy</button>
-                            <button class="nav-button">Egy</button>
-                            <button class="nav-button">Egy</button>
-                            <button class="nav-button">Egy</button>
-                            <button class="nav-button">Egy</button>
-                        </div>
-                    </div>
+                <div class="display-block">
+                    <button class="nav-button logo" type="button" (click)="toggle(NavbarDropDown)"><img class="menu_icon" src="../../../assets/logo/menu.png" alt="MENU"></button>
                 </div>
             </div>
-            <div>
-                <button class="nav-button" type="button">szia</button>
-            </div>
+        </div>
+    </div>
+
+    <div class="dropdown" #NavbarDropDown data-element="tall-dropdown">
+        <button class="nav-button drop-button" #MarginRight (click)="toggle(DropDownMobile,'MobileDropDown')" type="button">Služby</button>
+        <div class="dropdown right_margin display-block visible" #DropDownMobile *ngIf="showMobileDropDown" data-element="tall-dropdown">
+            <button class="nav-button">Egy</button>
+            <button class="nav-button">Egyadfajsdlfkja </button>
+            <button class="nav-button">Egy</button>
+            <button class="nav-button">Egy</button>
+            <button class="nav-button">Egy</button>
         </div>
     </div>
 </div>

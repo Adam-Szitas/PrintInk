@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToggleContactService } from 'src/app/services/toggle-contacts.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  private oldVal!: boolean;
+  showMobileDropDown: boolean = false;
 
-  constructor() { }
+  constructor(
+    private toggleService: ToggleContactService
+  ) {
 
-  ngOnInit(): void {
   }
 
-  public toggle(event:HTMLElement,navbar: HTMLElement,height:string){
-    console.log(event?.attributes.getNamedItem('data-element="tall-dropdown"'));
+  ngOnInit(): void {
+    this.toggleService.isOpen$.subscribe(
+    (response) => {
+      this.oldVal = !!response;
+    })
+  }
 
-    if(event.classList.contains('visible')){
-      event.classList.remove('visible');
+  getParentMarginRight(Element: HTMLElement){
+    if(Element){
+      return Element.style.marginRight;
     }else{
-      event.classList.add('visible');
+      return 0;
+    }
+  }
+
+  Contact():void{
+    this.toggleService.updateToggle(this.oldVal);
+  }
+
+  public toggle(event?:HTMLElement,element?: string): void{
+
+    if(element === 'MobileDropDown'){
+      console.log(element);
+      this.showMobileDropDown = !this.showMobileDropDown;
+    }else{
+      if(event?.classList.contains('visible')){
+        event.classList.remove('visible');
+      }else{
+        event?.classList.add('visible');
+      }
     }
   }
   public marketing(){

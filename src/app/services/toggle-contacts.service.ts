@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToggleContactService {
 
-  private isOpen: boolean = false;
+  isOpen$: Subject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {}
 
-  updateToggle(): void{
-    this.isOpen = !this.isOpen;
-  }
-
-  getToggleValue(): Observable<boolean>{
-    const open = of(this.isOpen);
-    return open;
+  updateToggle(oldVal: boolean): void{
+    this.isOpen$.next(!oldVal);
   }
 }

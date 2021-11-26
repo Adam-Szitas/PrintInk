@@ -1,5 +1,31 @@
-<div class="contact" [ngClass]="{'height-0': (!!isOpen$ === true)}">
-    <form>
-        <input type="text" placeholder="value">
+<div [ngClass]="lastIsOpen$ ? 'contact' : 'contact height-0'">
+    <form (submit)="onSubmit()" [formGroup]="form">
+        <div class="row">
+            <div class="column">
+                <input type="text" formControlName="name" [placeholder]="placeholder.name">
+            </div>
+            <div class="column">
+                <input type="text" formControlName="mail" [placeholder]="placeholder.mail">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <input type="text" formControlName="title" [placeholder]="placeholder.title">
+            </div>
+            <div class="column">
+                <input type="text" formControlName="phone" [placeholder]="placeholder.phone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <textarea type="text" rows="8" formControlName="description" [placeholder]="placeholder.description">
+                </textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="submit" type="submit">submit</button>
+            </div>
+        </div>
     </form>
 </div>

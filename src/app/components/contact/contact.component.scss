@@ -1,10 +1,63 @@
+@import '../../colors.scss';
+@media screen and(min-width: 1920px) {
+    form>.row {
+        width: 1280px !important;
+    }
+}
+
+@media screen and(max-width: 1919px) {
+    form>.row {
+        width: 720px !important;
+    }
+}
+
+@media screen and(max-width: 1279px) {
+    form>.row {
+        width: 60% !important;
+    }
+}
+
 .contact {
+    &,
+    & * {
+        transition: all .2s ease-in-out;
+    }
     width: 100%;
-    height: auto;
+    height: 400px;
     overflow: hidden;
     position: relative;
+    margin: 0 auto;
     &.height-0 {
         height: 0 !important;
         position: inherit;
+        transition: all .2s ease-in-out;
+    }
+    &>form {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        &>.row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            align-self: center;
+            &>.column {
+                width: 100%;
+                padding: 20px;
+                &>input,
+                &>textarea {
+                    width: 80%;
+                    padding: 10px 20px;
+                    border: 1px solid $blue;
+                }
+            }
+        }
     }
 }
