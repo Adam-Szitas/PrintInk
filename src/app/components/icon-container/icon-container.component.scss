@@ -24,7 +24,9 @@ div.container {
         display: grid;
         grid-gap: 15px;
         margin-bottom: 10px;
-        grid-template-areas: 'first second third fourth' 'first fifth fifth sixth';
+        grid-template-areas: 
+        'first second third fourth' 
+        'first fifth fifth sixth';
         & div {
             justify-content: center;
             align-items: center;
