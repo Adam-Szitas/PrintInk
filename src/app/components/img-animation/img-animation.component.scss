@@ -63,22 +63,24 @@
                         background-color: transparent;
                     }
                     & .title {
-                        font-size: 2em;
                         font-weight: 900;
                         margin: 20px;
                         margin-left: 0;
                         color: $white;
+                        font-family: "AcuminProCondSemiBold";
                         & * {
                             text-transform: uppercase;
-                            font-size: 26px;
+                            font-size: 30px;
                         }
                         & .title_highlighted {
+                            font-family: "AcuminProCondSemiBold";
                             color: $blue;
                         }
                     }
                     & .text {
+                        font-family: "AcuminProSemicondMedium";
                         text-align: left;
-                        font-size: 1.2em;
+                        font-size: 18px;
                         color: $white;
                     }
                 }

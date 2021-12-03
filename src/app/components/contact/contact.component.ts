@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -50,8 +51,9 @@ export class ContactComponent implements OnInit {
   });
 
   constructor(
-    private toggleService: ToggleContactService
-  ) { }
+    private toggleService: ToggleContactService,
+    protected httpService: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.toggleService.isOpen$.subscribe(
@@ -65,7 +67,28 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.form.valid.valueOf());
+    const data = {
+      name: this.form.get('name')?.value,
+      mail: this.form.get('mail')?.value,
+      phone: this.form.get('phone')?.value,
+      title: this.form.get('title')?.value,
+      descr: this.form.get('description')?.value
+    }
 
+    const httpHeader = {
+      headers: new HttpHeaders({
+        'Accept'        : 'application/json',
+        'Content-Type'  : 'application/json'
+      })
+    }
+
+    this.httpService.post('https://print-ink.sk/phpmailer/mail.php', data, httpHeader).subscribe(
+      (result:any) => {
+        console.log(result);
+      },
+      error => {
+        console.error(error);
+      }
+    )
   }
 }

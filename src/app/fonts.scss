@@ -1,4 +1,49 @@
 @font-face {
-    font-family: 'Acumin Pro Cond Medium';
-    src: url(../assets/fonts/acumin/Acumin-Pro-Cond-Medium.otf);
+    font-family: "AcuminProCondMedium";
+    src: url("../assets/fonts/acumin/Acumin Pro Cond Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "AcuminProCondBlack";
+    src: url("../assets/fonts/acumin/Acumin Pro Cond Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "AcuminProCondBold";
+    src: url("../assets/fonts/acumin/Acumin Pro Cond Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "AcuminProCondSemibold";
+    src: url("../assets/fonts/acumin/Acumin Pro Cond Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "AcuminProSemicondBlack";
+    src: url("../assets/fonts/acumin/Acumin Pro Semicond Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "AcuminProSemicondMedium";
+    src: url("../assets/fonts/acumin/Acumin Pro Semicond Medium.otf") format("opentype");
+}
+
+.AcuminProSemicondMedium {
+    font-family: "AcuminProSemicondMedium" !important;
+}
+
+.size-1 {
+    font-size: 11px;
+}
+
+.size-2 {
+    font-size: 14px;
+}
+
+.size-3 {
+    font-size: 17px;
+}
+
+.size-4 {
+    font-size: 21px;
 }

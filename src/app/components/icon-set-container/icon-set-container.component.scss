@@ -34,9 +34,11 @@
             z-index: 10;
             opacity: 0;
             transition: all .5s ease-in-out;
+            transform: scale(.5);
         }
         &:hover .picture-overlay {
             opacity: 1;
+            transform: scale(1);
         }
     }
 }

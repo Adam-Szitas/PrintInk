@@ -1,5 +1,6 @@
 @import '../../colors.scss';
 @import '../../width.scss';
+@import '../../fonts.scss';
 .mg-0-auto {
     margin: 0 auto;
 }
@@ -36,7 +37,6 @@
         }
     }
     &>.nav-items {
-        font-family: 'Acumin Pro Cond Medium';
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -108,6 +108,14 @@
     & button:not(.logo) {
         height: auto;
         padding: 20px 25px;
+        @extend .size-3;
+        font-family: "AcuminProCondBlack";
+    }
+    & button>div.nav-button {
+        font-family: "AcuminProCondBlack";
+        &>i.fa {
+            @extend .size-2;
+        }
     }
 }
 
@@ -137,8 +145,13 @@
         border-top: 2px solid $blue;
     }
     & .nav-button {
-        display: block;
-        background-color: white;
+        display: flex;
+        font-size: 14px;
+        background-color: $white;
+        & img {
+            top: 0;
+            margin-top: 0 !important;
+        }
     }
     &.right_margin {
         position: absolute;
@@ -151,9 +164,25 @@
     &[data-element="tall-dropdown"] {
         position: relative;
         width: 100%;
+        background-color: $white;
+        & div,
         &>button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
             position: relative;
             width: 100%;
+            &>div {
+                width: auto;
+            }
+            &>i.fa {
+                font-size: 14px;
+                position: absolute;
+                left: 0;
+                margin-left: -20px;
+                top: 0;
+            }
         }
     }
     &.display-block {
@@ -171,6 +200,27 @@
     text-align: center;
     flex-direction: column;
     flex-wrap: nowrap;
+    &>div.dropdown {
+        position: relative;
+        background-color: $white;
+        &>button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            width: 100%;
+            &>i.fa {
+                font-size: 14px;
+                position: absolute;
+                left: 0;
+                margin: 0 auto;
+                top: 0;
+                margin-top: 20px;
+                margin-left: 12.5px;
+            }
+        }
+    }
 }
 
 .nav_tall {

@@ -9,13 +9,13 @@
                     <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
                 </div>
                 <div class="flex-column">
-                    <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button">Služby</button>
+                    <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> Služby</div></button>
                     <div class="dropdown" #DropDown data-element="wide-dropdown">
-                        <button class="nav-button">Egy</button>
-                        <button class="nav-button">Egy</button>
-                        <button class="nav-button">Egy</button>
-                        <button class="nav-button">Egy</button>
-                        <button class="nav-button">Egy</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
                     </div>
                 </div>
                 <div>
@@ -34,13 +34,16 @@
     </div>
 
     <div class="dropdown" #NavbarDropDown data-element="tall-dropdown">
-        <button class="nav-button drop-button" #MarginRight (click)="toggle(DropDownMobile,'MobileDropDown')" type="button">Služby</button>
+        <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
+        <button class="nav-button drop-button" #MarginRight (click)="toggle(DropDownMobile,'MobileDropDown')" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> Služby</div></button>
         <div class="dropdown right_margin display-block visible" #DropDownMobile *ngIf="showMobileDropDown" data-element="tall-dropdown">
-            <button class="nav-button">Egy</button>
-            <button class="nav-button">Egyadfajsdlfkja </button>
-            <button class="nav-button">Egy</button>
-            <button class="nav-button">Egy</button>
-            <button class="nav-button">Egy</button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
         </div>
+        <button class="nav-button" type="button">galéria</button>
+        <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
     </div>
 </div>

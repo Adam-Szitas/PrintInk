@@ -4,9 +4,15 @@
     }
     .nav_tall {
         display: none !important;
+        & .visible {
+            display: none;
+        }
     }
     .flex-main-width {
         max-width: 1919px !important;
+    }
+    div[data-element="tall-dropdown"] {
+        display: none !important;
     }
 }
 
@@ -15,10 +21,16 @@
         display: flex !important;
     }
     .nav_tall {
-        display: none !important
+        display: none !important;
+        & .visible {
+            display: none;
+        }
     }
     .flex-main-width {
         max-width: 1279px !important;
+    }
+    div[data-element="tall-dropdown"] {
+        display: none !important;
     }
 }
 
@@ -28,8 +40,14 @@
     }
     .nav_wide {
         display: none !important;
+        & .visible {
+            display: none;
+        }
     }
     .flex-main-width {
         max-width: 767px !important;
+    }
+    div[data-element="tall-dropdown"].visible {
+        display: block !important;
     }
 }
