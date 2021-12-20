@@ -13,6 +13,7 @@ import { IconSetContainerComponent } from './components/icon-set-container/icon-
 import { ContactComponent } from './components/contact/contact.component';
 import { ToggleContactService } from './services/toggle-contacts.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ImgAnimationComponent,
     IconContainerComponent,
     IconSetContainerComponent,
-    ContactComponent
+    ContactComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
