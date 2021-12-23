@@ -51,10 +51,9 @@
             justify-content: center;
             align-items: center;
             align-self: center;
-            padding: 10px;
             background-color: transparent;
+            margin-top: 20px;
             &>div:not(.display-block) {
-                margin-top: 20px;
                 display: block;
                 text-align: center;
                 align-items: center;
@@ -108,7 +107,7 @@
     & button:not(.logo) {
         height: auto;
         padding: 20px 25px;
-        @extend .size-3;
+        @extend .size-4;
         font-family: "AcuminProCondBlack";
     }
     & button>div.nav-button {
@@ -119,6 +118,17 @@
     }
 }
 
+button>span {
+    font-family: 'AcuminProCondBlack';
+}
+
+// .button-v-center {
+//     display: flex !important;
+//     justify-content: center;
+//     align-items: center;
+//     align-self: center;
+//     text-align: center;
+// }
 .left {
     float: left;
     margin-left: 0 !important;
@@ -140,6 +150,7 @@
     top: 0;
     transition: all 0.2s ease-in-out;
     height: auto !important;
+    box-shadow: 0 5px 15px black;
     &.visible {
         display: block;
         border-top: 2px solid $blue;
@@ -212,12 +223,11 @@
             width: 100%;
             &>i.fa {
                 font-size: 14px;
-                position: absolute;
+                position: relative;
                 left: 0;
                 margin: 0 auto;
                 top: 0;
-                margin-top: 20px;
-                margin-left: 12.5px;
+                margin-right: 10px;
             }
         }
     }

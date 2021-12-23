@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToggleContactService } from 'src/app/services/toggle-contacts.service';
 
 interface Data{
@@ -19,13 +18,14 @@ interface Data{
 export class ContactComponent implements OnInit {
 
   placeholder: Data = {
-    name: 'Name',
-    mail: 'E-mail address',
-    title: 'Title',
-    phone: 'Phone number',
-    description: 'Description'
+    name: 'Celé Meno',
+    mail: 'E-mailová Addressa',
+    title: 'Téma',
+    phone: 'Telefón',
+    description: 'Obsah'
   }
 
+  left: boolean = false;
   lastIsOpen$!: boolean;
 
   form = new FormGroup({
@@ -90,5 +90,27 @@ export class ContactComponent implements OnInit {
         console.error(error);
       }
     )
+  }
+
+  switchContactAndMessage(ContactElement: HTMLElement, MessageElement:HTMLElement, Toggle: HTMLElement){
+
+    if(ContactElement.classList.contains('opacity-0')){
+      MessageElement.classList.add('opacity-0');
+      ContactElement.classList.remove('opacity-0');
+
+      Toggle.classList.remove('print_blue');
+      Toggle.classList.add('print_purple');
+
+      this.left = false;
+    }else{
+      MessageElement.classList.remove('opacity-0');
+      ContactElement.classList.add('opacity-0');
+
+      Toggle.classList.add('print_blue');
+      Toggle.classList.remove('print_purple');
+
+      this.left = true;
+    }
+
   }
 }

@@ -1,32 +1,99 @@
 <div [ngClass]="lastIsOpen$ ? 'contact' : 'contact height-0'">
-    <form (submit)="onSubmit()" [formGroup]="form">
-        <h3>Pošlite správu sem</h3>
-        <div class="row">
-            <div class="column">
-                <input type="text" formControlName="name" [placeholder]="placeholder.name">
-            </div>
-            <div class="column">
-                <input type="text" formControlName="mail" [placeholder]="placeholder.mail">
-            </div>
-            <div class="column">
-                <input type="text" formControlName="phone" [placeholder]="placeholder.phone">
+    <div class='contact'>
+        <div class="inline" #contact>
+            <form class="left">
+                <h3>Kontaktujte ma</h3>
+                <div class="contact_container">
+                    <h4 class="capital">tomáš meleg</h4>
+                    <div class="details phone">
+                        <table>
+                            <tr class="phone">
+                                <td class="icon">
+                                    <i class="fa fa-phone"></i>
+                                </td>
+                                <td class="number">
+                                    <span>+421 </span> <span>918 </span> <span>908 </span> <span>847</span>
+                                </td>
+                            </tr>
+                            <tr class="mail">
+                                <td class="icon">
+                                    <i class="fa fa-envelope"></i>
+                                </td>
+                                <td class="text">
+                                    <span>info</span><span>@</span><span>print-ink</span><span>.sk</span>
+                                </td>
+                            </tr>
+                            <tr class="address">
+                                <td class="icon">
+                                    <i class="fa fa-map-marker"></i>
+                                </td>
+                                <td class="text">
+                                    <span>Rohovce 146, 930 30  Rohovce</span>
+                                </td>
+                            </tr>
+                            <tr class="tax">
+                                <td class="icon">
+                                    <span class="capital">ičo: </span>
+                                </td>
+                                <td class="text">
+                                    <span>41397681</span>
+                                </td>
+                            </tr>
+                            <tr class="tax">
+                                <td class="icon">
+                                    <span class="capital"> dič: </span>
+                                </td>
+                                <td class="text">
+                                    <span>107375191</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <div class="triangle right print_purple" #this (click)="switchContactAndMessage(contact,message,this.this)">
+                <i class="fa fa-chevron-right" *ngIf="!left"></i>
+                <i class="fa fa-chevron-left" *ngIf="left"></i>
             </div>
         </div>
-        <div class="row">
-            <div class="column">
-                <input type="text" formControlName="title" [placeholder]="placeholder.title">
-            </div>
+
+        <div class="inline opacity-0" #message>
+            <form (submit)="onSubmit()" [formGroup]="form">
+                <h3>Pošlite správu sem</h3>
+                <div class="row">
+                    <div class="column">
+                        <input type="text" formControlName="name" [placeholder]="placeholder.name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="text" formControlName="mail" [placeholder]="placeholder.mail">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="text" formControlName="phone" [placeholder]="placeholder.phone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <input type="text" formControlName="title" [placeholder]="placeholder.title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <textarea type="text" rows="5" formControlName="description" [placeholder]="placeholder.description">
+              </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <button class="submit" type="submit"><i class="fa fa-envelope"></i> Poslať</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="column">
-                <textarea type="text" rows="8" formControlName="description" [placeholder]="placeholder.description">
-                </textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <button class="submit" type="submit"><i class="fa fa-envelope"></i> Poslať!</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>

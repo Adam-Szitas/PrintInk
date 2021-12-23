@@ -1,27 +1,26 @@
 <div class="mg-0-auto navbar" #Navbar data-element="navbar">
     <div class="flex-main-width nav-items">
         <div class="left">
-            <button class="logo" routerLink=""><img src="assets/logo/print_ink.jpg" alt="PresWeb"></button>
+            <button class="logo" routerLink=""><img src="assets/logo/print_ink.jpg" alt="PrintInk"></button>
         </div>
         <div class="right">
             <div class="right nav_wide">
-                <div>
+                <div class="button-v-center">
                     <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
                 </div>
-                <div class="flex-column">
+                <div class="flex-column button-v-center">
                     <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> Služby</div></button>
                     <div class="dropdown" #DropDown data-element="wide-dropdown">
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> Button</button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
                     </div>
                 </div>
-                <div>
+                <div class="button-v-center">
                     <button class="nav-button" type="button" routerLink="gallery">galéria</button>
                 </div>
-                <div>
+                <div class="button-v-center">
                     <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
                 </div>
             </div>
@@ -43,7 +42,7 @@
             <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
             <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
         </div>
-        <button class="nav-button" type="button">galéria</button>
+        <button class="nav-button" type="button" routerLink="gallery">galéria</button>
         <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
     </div>
 </div>

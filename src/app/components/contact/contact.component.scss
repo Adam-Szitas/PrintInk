@@ -1,4 +1,5 @@
 @import '../../colors.scss';
+@import '../../fonts.scss';
 @media screen and(min-width: 1920px) {
     form>.row {
         width: 1280px !important;
@@ -20,7 +21,44 @@
 .contact {
     &,
     & * {
-        transition: all .2s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    & .capital {
+        text-transform: uppercase;
+    }
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-image: url(../../../assets/imgs/colored.jpg);
+    background-attachment: fixed;
+    background-position: bottom;
+    & h4 {
+        font-family: 'AcuminProSemibold';
+        margin-left: 10px;
+    }
+    & .inline {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        & .contact_container {
+            margin: 25px;
+            &>.details {
+                margin: 10px 0;
+                & i.fa {
+                    margin-right: 5px;
+                }
+                & td {
+                    padding: 5px 10px;
+                }
+                & tr *:not(i.fa) {
+                    font-family: 'AcuminProSemicondMedium';
+                    @extend .size-3;
+                }
+            }
+        }
+    }
+    & .inline.grey {
+        background-color: #ddd;
     }
     width: 100%;
     height: 500px;
@@ -32,7 +70,7 @@
         position: inherit;
         transition: all .2s ease-in-out;
     }
-    &>form {
+    & form {
         height: 100%;
         display: flex;
         align-items: center;
@@ -41,7 +79,9 @@
         justify-content: center;
         flex-direction: column;
         flex-wrap: nowrap;
-        background-color: #ddd;
+        &.left {
+            text-align: left;
+        }
         &>.row {
             display: flex;
             flex-direction: row;
@@ -52,13 +92,15 @@
             align-self: center;
             &>.column {
                 width: 100%;
-                padding: 20px;
+                padding: 5px 0;
                 &>input,
                 &>textarea {
                     width: 80%;
-                    padding: 10px 20px;
+                    padding: 10px;
                     background-color: white;
                     border: 1px solid grey;
+                    font-family: 'AcuminProCondMedium';
+                    @extend .size-3;
                 }
             }
         }
@@ -77,4 +119,55 @@
             }
         }
     }
+}
+
+h3 {
+    @extend .size-4;
+    font-family: 'AcuminProCondBlack';
+}
+
+div.triangle {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    margin-left: -25px;
+    margin-top: 50px;
+    top: 0;
+    z-index: 500;
+    &:hover {
+        cursor: pointer;
+    }
+    text-align: center;
+    justify-content: center;
+    & i.fa {
+        transform: rotate(-45deg);
+        font-size: 20px;
+        color: white;
+    }
+    & i.fa-chevron-right {
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+    & i.fa-chevron-left {
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+}
+
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.print_blue {
+    background-color: $blue !important;
+}
+
+.print_purple {
+    background-color: $purple !important;
 }
