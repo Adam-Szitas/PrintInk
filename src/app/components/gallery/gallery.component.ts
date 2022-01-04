@@ -7,6 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
+  items: Object[] = [
+    {
+      source: "../../../assets/imgs/colored.jpg",
+      alt: "colored",
+      id: "testId"
+    },{
+      source: "../../../assets/imgs/colored.jpg",
+      alt: "colored",
+      id: "testId"
+    },{
+      source: "../../../assets/imgs/colored.jpg",
+      alt: "colored",
+      id: "testId"
+    },{
+      source: "../../../assets/imgs/colored.jpg",
+      alt: "colored",
+      id: "testId"
+    }
+  ]
+
+
   constructor() { }
 
   ngOnInit(): void {

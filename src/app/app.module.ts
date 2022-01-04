@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ImgAnimationComponent } from './components/img-animation/img-animation.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { IconContainerComponent } from './components/icon-container/icon-container.component';
 import { RouterModule } from '@angular/router';
 import { IconSetContainerComponent } from './components/icon-set-container/icon-set-container.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ToggleContactService } from './services/toggle-contacts.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryModule } from './components/gallery/gallery.module';
 
 
 @NgModule({
@@ -24,9 +24,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     ImgAnimationComponent,
     IconContainerComponent,
     IconSetContainerComponent,
-    ContactComponent,
-    GalleryComponent
-  ],
+    ContactComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +35,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
       {
         path: '', component: HomeComponent
       }
-    ])
+    ]),
+    GalleryModule
   ],
   providers: [ToggleContactService],
   bootstrap: [AppComponent]

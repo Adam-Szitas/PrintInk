@@ -1,40 +1,5 @@
 <div class="container">
     <div class="grid-container">
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
-        <div class="grid-item">
-            <img src="../../../assets/imgs/colored.jpg" alt="colored">
-            <div class="overlay">
-
-            </div>
-        </div>
+        <app-gallery-core *ngFor="let item of items" [imageCover]="item"></app-gallery-core>
     </div>
 </div>

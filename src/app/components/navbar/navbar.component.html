@@ -6,43 +6,43 @@
         <div class="right">
             <div class="right nav_wide">
                 <div class="button-v-center">
-                    <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
+                    <button class="nav-button menu_button" (click)="marketing()" type="button">Reklamný textil</button>
                 </div>
                 <div class="flex-column button-v-center">
-                    <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> Služby</div></button>
+                    <button class="nav-button drop-button" (click)="toggle(DropDown)" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button'>Služby</span></div></button>
                     <div class="dropdown" #DropDown data-element="wide-dropdown">
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
-                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></button>
+                        <button class="nav-button"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></button>
                     </div>
                 </div>
                 <div class="button-v-center">
-                    <button class="nav-button" type="button" routerLink="gallery">galéria</button>
+                    <button class="nav-button menu_button" type="button" routerLink="gallery">galéria</button>
                 </div>
                 <div class="button-v-center">
-                    <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
+                    <button class="nav-button menu_button" type="button" (click)="Contact()">kontakt</button>
                 </div>
             </div>
             <div class="right nav_tall">
                 <div class="display-block">
-                    <button class="nav-button logo" type="button" (click)="toggle(NavbarDropDown)"><img class="menu_icon" src="../../../assets/logo/menu.png" alt="MENU"></button>
+                    <button class="nav-button menu_logo" type="button" (click)="toggle(NavbarDropDown)"><img class="menu_icon" src="../../../assets/logo/menu.png" alt="MENU"></button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="dropdown" #NavbarDropDown data-element="tall-dropdown">
-        <button class="nav-button" (click)="marketing()" type="button">Reklamný textil</button>
-        <button class="nav-button drop-button" #MarginRight (click)="toggle(DropDownMobile,'MobileDropDown')" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> Služby</div></button>
+        <button class="nav-button menu_button" (click)="marketing()" type="button">Reklamný textil</button>
+        <button class="nav-button drop-button" #MarginRight (click)="toggle(DropDownMobile,'MobileDropDown')" type="button"><div class="nav-button"><i class="fa fa-chevron-right"></i> <span class="mg-top-5px menu_button">Služby</span></div></button>
         <div class="dropdown right_margin display-block visible" #DropDownMobile *ngIf="showMobileDropDown" data-element="tall-dropdown">
-            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
-            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
-            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
-            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
-            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> Button</div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></div></button>
+            <button class="nav-button"><div class="AcuminProSemicondMedium size-2"><i class="fa fa-chevron-right"></i> <span class='mg-top-5px menu_button size-3'>Button</span></div></button>
         </div>
-        <button class="nav-button" type="button" routerLink="gallery">galéria</button>
-        <button class="nav-button" type="button" (click)="Contact()">kontakt</button>
+        <button class="nav-button menu_button" type="button" routerLink="gallery">galéria</button>
+        <button class="nav-button menu_button" type="button" (click)="Contact()">kontakt</button>
     </div>
 </div>
