@@ -14,7 +14,7 @@ div.container {
         height: 0;
     }
     & .body {
-        height: 90%;
+        height: 80%;
         background-color: #e8e8e8;
         display: flex;
         flex-direction: row;
@@ -24,8 +24,6 @@ div.container {
         align-self: center;
         &>div {
             display: inline;
-            border: 1px solid black;
-            transition: all .25s ease-in-out !important;
             position: absolute;
             &:hover {
                 transform: scale(1.1);
@@ -33,48 +31,23 @@ div.container {
                 z-index: 6;
             }
             &.lowPrio {
-                height: 50%;
-                width: 350px;
                 background-color: darkgrey;
-                &[data-position="left"] {
-                    left: 0;
-                    margin-left: 10px;
-                    z-index: 3;
-                }
-                &[data-position="right"] {
-                    right: 0;
-                    margin-right: 10px;
-                    z-index: 3;
-                }
             }
             &.midPrio {
-                height: 75%;
-                width: 500px;
                 background-color: grey;
-                &[data-position="left-center"] {
-                    left: 0;
-                    margin-left: 15%;
-                    z-index: 4;
-                }
-                &[data-position="right-center"] {
-                    right: 0;
-                    margin-right: 15%;
-                    z-index: 4;
-                }
             }
             &.highPrio {
-                height: 90%;
-                width: 650px;
                 background-color: darkblue;
-                &[data-position="center"] {
-                    margin: 0 auto;
-                    z-index: 5;
-                }
             }
         }
     }
     & .footer {
         height: 10%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
     }
 }
 

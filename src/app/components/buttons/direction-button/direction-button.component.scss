@@ -1,0 +1,20 @@
+button {
+    display: flex;
+    border: 0;
+    position: absolute;
+    background-color: transparent;
+    height: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    div {
+        width: 0;
+        height: 0;
+        border-top: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 30px solid grey;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

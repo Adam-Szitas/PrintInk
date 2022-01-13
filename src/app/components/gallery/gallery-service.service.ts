@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { ElementList, GalleryItems } from 'src/app/interfaces/interfaces';
 
 @Injectable({
@@ -49,18 +50,13 @@ export class GalleryService {
     this.elementList = elementObject;
   }
 
-  nextSlide(){
-    this.swapSlideAttrs('next');
-  }
 
-  backSlide(){
-    this.swapSlideAttrs('back');
-  }
 
-  private swapSlideAttrs(direction: string){
-    if(direction === 'next'){
-      this.elementList.leftHidden.nativeElement.attributes['data-position'] = ''
-    }
+  private swapSlideFromComponent = new Subject<any>();
+  swapSlideFromComponent$ = this.swapSlideFromComponent.asObservable();
+
+  swapSlide(direction: string){
+      this.swapSlideFromComponent.next(direction)
   }
 
 }

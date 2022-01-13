@@ -4,21 +4,38 @@
     </div>
     <!-- here comes da boom -->
     <div class="body">
-        <div class="helper-left" data-position="left-hidden" #leftHidden></div>
 
-        <div class="lowPrio" data-position="left" #left></div>
+        <div class="helper-left" data-position="left-hidden" [@leftHidden]='leftHidden'>
+            <!-- <img [src]="leftHiddenVar.src" [alt]="leftHiddenVar.alt"> -->
+        </div>
 
-        <div class="midPrio" data-position="left-center" #leftCenter></div>
+        <div class="lowPrio" data-position="left" [@left]='left'>
+            <!-- <img [src]="leftVar.src" [alt]="leftVar.alt"> -->
+        </div>
 
-        <div class="highPrio" data-position="center" #center></div>
+        <div class="midPrio" data-position="left-center" [@leftCenter]='leftCenter'>
+            <!-- <img [src]="leftCenterVar.src" [alt]="leftCenterVar.alt"> -->
+        </div>
 
-        <div class="midPrio" data-position="right-center" #rightCenter></div>
+        <div class="highPrio" data-position="center" [@center]='center'>
+            <!-- <img [src]="centerVar.src" [alt]="centerVar.alt"> -->
+        </div>
 
-        <div class="lowPrio" data-position="right" #right></div>
+        <div class="midPrio" data-position="right-center" [@rightCenter]='rightCenter'>
+            <!-- <img [src]="rightCenterVar.src" [alt]="rightCenterVar.alt"> -->
+        </div>
 
-        <div class="helper-right" data-position="right-hidden" #rightHidden></div>
+        <div class="lowPrio" data-position="right" [@right]='right'>
+            <!-- <img [src]="rightVar.src" [alt]="rightVar.alt"> -->
+        </div>
+
+        <div class="helper-right" data-position="right-hidden" [@rightHidden]='rightHidden'>
+            <!-- <img [src]="rightHiddenVar.src" [alt]="rightHiddenVar.alt"> -->
+        </div>
     </div>
     <div class="footer">
+        <app-direction-button [direction]="'left'"></app-direction-button>
+        <app-direction-button [direction]="'right'"></app-direction-button>
 
     </div>
 </div>

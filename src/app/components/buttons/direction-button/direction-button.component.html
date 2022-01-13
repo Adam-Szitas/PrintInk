@@ -1,0 +1,10 @@
+<button *ngIf="direction == 'left'" [style]="direction == 'left' ? 'left: 0' : ''" [ngStyle]="{'transform': 'rotateZ('+buttonRotateStyle+')'}" (click)="swapSlide('left')">
+  <div>
+
+  </div>
+</button>
+<button *ngIf="direction != 'left'" [style]="direction == 'right' ? 'right: 0' : ''" [ngStyle]="{'transform': 'rotateZ('+buttonRotateStyle+')'}" (click)="swapSlide('right')">
+  <div>
+
+  </div>
+</button>

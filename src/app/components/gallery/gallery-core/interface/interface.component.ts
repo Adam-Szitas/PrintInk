@@ -1,44 +1,303 @@
-import { state, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ElementList } from 'src/app/interfaces/interfaces';
 import { GalleryService } from '../../gallery-service.service';
+
 
 @Component({
   selector: 'app-interface',
   templateUrl: './interface.component.html',
   styleUrls: ['./interface.component.scss'],
-  // animations: [
-  //   trigger('next',[
-  //     //in case next
-  //     state('')
-  //   ])
-  // ]
+  animations: [
+    trigger('leftHidden',[
+      //in case next
+      state('next', style({
+        'opacity': '0',
+
+      })),
+      state('default',style({
+        'height': '50%',
+        'width': '350px',
+        'left': '0',
+        'margin-left': '10px',
+        'z-index': '2',
+        'opacity': '0'
+      })),
+      state('back', style({
+        'height': '50%',
+        'width': '350px',
+        'left': '0',
+        'margin-left': '10px',
+        'z-index': '3',
+        'opacity': '1'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('left',[
+      //in case next
+      state('next',style({
+        'height': '50%',
+        'width': '350px',
+        'left': '0',
+        'margin-left': '10px',
+        'z-index': '3'
+      })),
+      state('default',style({
+        'height': '50%',
+        'width': '350px',
+        'left': '0',
+        'margin-left': '10px',
+        'z-index': '3'
+      })),
+      state('back',style({
+        'height': '75%',
+        'width': '500px',
+        'left': '0',
+        'margin-left': '15%',
+        'z-index': '4'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('leftCenter',[
+      //in case next
+      state('next',style({
+        'height': '50%',
+        'width': '350px',
+        'left': '0',
+        'margin-left': '10px',
+        'z-index': '3'
+      })),
+      state('default', style({
+        'height': '75%',
+        'width': '500px',
+        'left': '0',
+        'margin-left': '15%',
+        'z-index': '4'
+      })),
+      state('back', style({
+        'height': '90%',
+        'width': '650px',
+        'margin': '0 auto',
+        'z-index': '5'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('center',[
+      //in case next
+      state('next',style({
+        'height': '75%',
+        'width': '500px',
+        'left': '0',
+        'margin-left': '15%',
+        'z-index': '4'
+      })),
+      state('default',style({
+        'height': '90%',
+        'width': '650px',
+        'margin': '0 auto',
+        'z-index': '5'
+      })),
+      state('back',style({
+        'height': '75%',
+        'width': '500px',
+        'right': '0',
+        'margin-right': '15%',
+        'z-index': '4'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('rightCenter',[
+      //in case next
+      state('next',style({
+        'height': '90%',
+        'width': '650px',
+        'margin': '0 auto',
+        'z-index': '5'
+      })),
+      state('default',style({
+        'height': '75%',
+        'width': '500px',
+        'right': '0',
+        'margin-right': '15%',
+        'z-index': '4'
+      })),
+      state('back', style({
+        'height': '50%',
+        'width': '350px',
+        'right': '0',
+        'margin-right': '10px',
+        'z-index': '3'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('right',[
+      //in case next
+      state('next',style({
+        'height': '75%',
+        'width': '500px',
+        'right': '0',
+        'margin-right': '15%',
+        'z-index': '4'
+      })),
+      state('default', style({
+        'height': '50%',
+        'width': '350px',
+        'right': '0',
+        'margin-right': '10px',
+        'z-index': '3'
+      })),
+      state('back', style({
+        'opacity': '0'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+    trigger('rightHidden',[
+      //in case next
+      state('next', style({
+        'opacity': '1',
+        'width': '350px',
+        'z-index': '3'
+      })),
+      state('default',style({
+        'opacity': '0',
+        'height': '50%',
+        'width': '350px',
+        'right': '0',
+        'margin-right': '10px',
+        'z-index': '3',
+      })),
+      state('back', style({
+        'opacity': '0'
+      })),
+      transition('default => next', animate(0)),
+      transition('next => default', animate('500ms ease-in-out')),
+      transition('default => back', animate(0)),
+      transition('back => default', animate('500ms ease-in-out'))
+    ]),
+  ]
 })
 export class InterfaceComponent implements OnInit {
 
-  @ViewChild('leftHidden') leftHidden!: ElementRef;
-  @ViewChild('left') left!: ElementRef;
-  @ViewChild('leftCenter') leftCenter!: ElementRef;
-  @ViewChild('center') center!: ElementRef;
-  @ViewChild('rightCenter') rightCenter!: ElementRef;
-  @ViewChild('right') right!: ElementRef;
-  @ViewChild('rightHidden') rightHidden!: ElementRef;
+  leftHidden!: string
+  left!: string
+  leftCenter!: string
+  center!: string
+  rightCenter!: string
+  right!: string
+  rightHidden!: string
 
-  images!: Array<Object>;
+  images!: Array<any>;
+  private activeCenter: number = 0;
+  public leftHiddenVar: any;
+  public leftVar: any;
+  public leftCenterVar: any;
+  public centerVar: any;
+  public rightCenterVar: any;
+  public rightVar: any;
+  public rightHiddenVar: any;
+
+  updateVariables(){
+    // this.leftHiddenVar = {
+    //   src: this.images[this.activeCenter - 3].src ? this.images[this.activeCenter - 3].src : this.images[this.images.length - 2].src
+    // }
+    // this.leftVar = {
+    //   src: this.images[this.activeCenter - 2].src ? this.images[this.activeCenter - 2].src : this.images[this.images.length - 1].src
+    // }
+    // this.leftCenterVar = {
+    //   src: this.images[this.activeCenter - 1].src ? this.images[this.activeCenter - 1].src : this.images[this.images.length].src
+    // }
+    // this.centerVar = {
+    //   src: this.images[this.activeCenter].src
+    // }
+    // this.rightCenterVar = {
+    //   src: this.images[this.activeCenter + 1].src ? this.images[this.activeCenter + 1].src : this.images[0].src
+    // }
+    // this.rightVar = {
+    //   src: this.images[this.activeCenter + 2].src ? this.images[this.activeCenter + 2].src : this.images[1].src
+    // }
+    // this.rightHiddenVar = {
+    //   src: this.images[this.activeCenter + 3].src ? this.images[this.activeCenter + 3].src : this.images[2].src
+    // }
+  }
 
   constructor(
     private galleryService: GalleryService
   ) { }
 
-  @HostListener('document:click',['$event'])
-  onClick($event: Event){
-    this.getElementsToSwap($event);
-    this.galleryService.nextSlide()
-  }
-
 
   ngOnInit(): void {
-    this.images = this.galleryService.getItems();
+    this.defaultByOne();
+
+
+    this.galleryService.swapSlideFromComponent$.subscribe((direction: string) => {
+      if(direction === 'left'){
+        this.backClicked()
+      }else{
+        this.nextClicked()
+      }
+    });
+  }
+
+  defaultByOne(){
+    this.leftHidden = 'default'
+    this.left = 'default'
+    this.leftCenter = 'default'
+    this.center = 'default'
+    this.rightCenter = 'default'
+    this.right = 'default'
+    this.rightHidden = 'default'
+  }
+
+  nextClicked(){
+    this.nextByOne();
+    setTimeout(() => {
+
+      this.defaultByOne();
+    },1)
+  }
+  backClicked(){
+    this.backByOne();
+    setTimeout(() => {
+
+      this.defaultByOne();
+    },1)
+  }
+
+  backByOne(){
+    this.leftHidden = 'back'
+    this.left = 'back'
+    this.leftCenter = 'back'
+    this.center = 'back'
+    this.rightCenter = 'back'
+    this.right = 'back'
+    this.rightHidden = 'back'
+  }
+  nextByOne(){
+    this.leftHidden = 'next'
+    this.left = 'next'
+    this.leftCenter = 'next'
+    this.center = 'next'
+    this.rightCenter = 'next'
+    this.right = 'next'
+    this.rightHidden = 'next'
   }
 
   getElementsToSwap($event: Event){
@@ -53,7 +312,6 @@ export class InterfaceComponent implements OnInit {
       rightHidden: this.rightHidden
     }
 
-    console.log(this.leftHidden.nativeElement.attributes);
 
 
     this.galleryService.updateElementList(elementObject)
