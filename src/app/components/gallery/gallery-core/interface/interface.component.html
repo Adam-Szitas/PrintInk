@@ -6,31 +6,38 @@
     <div class="body">
 
         <div class="helper-left" data-position="left-hidden" [@leftHidden]='leftHidden'>
-            <!-- <img [src]="leftHiddenVar.src" [alt]="leftHiddenVar.alt"> -->
+            <img [src]="'../../../../assets/portrait/'+leftHiddenVar.src" [alt]="leftHiddenVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
-        <div class="lowPrio" data-position="left" [@left]='left'>
-            <!-- <img [src]="leftVar.src" [alt]="leftVar.alt"> -->
+        <div class="lowPrio" data-position="left" [@left]='left' (click)="nextClicked()">
+            <img [src]="'../../../../assets/portrait/'+leftVar.src" [alt]="leftVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
-        <div class="midPrio" data-position="left-center" [@leftCenter]='leftCenter'>
-            <!-- <img [src]="leftCenterVar.src" [alt]="leftCenterVar.alt"> -->
+        <div class="midPrio" data-position="left-center" [@leftCenter]='{value: leftCenter, params: {marginLeft: calculatedMarginLeft}}' (click)="nextClicked()">
+            <img [src]="'../../../../assets/portrait/'+leftCenterVar.src" [alt]="leftCenterVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
-        <div class="highPrio" data-position="center" [@center]='center'>
-            <!-- <img [src]="centerVar.src" [alt]="centerVar.alt"> -->
+        <div class="highPrio" data-position="center" [@center]='{value: center, params:{marginLeft: calculatedMarginLeft, marginLeftFromRight: calculatedMarginLeftFromRight}}'>
+            <img [src]="'../../../../assets/portrait/'+centerVar.src" [alt]="centerVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
-        <div class="midPrio" data-position="right-center" [@rightCenter]='rightCenter'>
-            <!-- <img [src]="rightCenterVar.src" [alt]="rightCenterVar.alt"> -->
+        <div class="midPrio" data-position="right-center" [@rightCenter]='{value: rightCenter, params:{marginLeft: calculatedMarginLeft}}' (click)="backClicked()">
+            <img [src]="'../../../../assets/portrait/'+rightCenterVar.src" [alt]="rightCenterVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
-        <div class="lowPrio" data-position="right" [@right]='right'>
-            <!-- <img [src]="rightVar.src" [alt]="rightVar.alt"> -->
+        <div class="lowPrio" data-position="right" [@right]='right' (click)="backClicked()">
+            <img [src]="'../../../../assets/portrait/'+rightVar.src" [alt]="rightVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
 
         <div class="helper-right" data-position="right-hidden" [@rightHidden]='rightHidden'>
-            <!-- <img [src]="rightHiddenVar.src" [alt]="rightHiddenVar.alt"> -->
+            <img [src]="'../../../../assets/portrait/'+rightHiddenVar.src" [alt]="rightHiddenVar.alt">
+            <!-- <img src="../../../../../assets/portrait/photo.jfif" alt="alt"> -->
         </div>
     </div>
     <div class="footer">

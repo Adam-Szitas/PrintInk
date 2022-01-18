@@ -25,19 +25,15 @@ div.container {
         &>div {
             display: inline;
             position: absolute;
+            overflow: hidden;
             &:hover {
                 transform: scale(1.1);
                 cursor: pointer;
                 z-index: 6;
             }
-            &.lowPrio {
-                background-color: darkgrey;
-            }
-            &.midPrio {
-                background-color: grey;
-            }
-            &.highPrio {
-                background-color: darkblue;
+            img {
+                position: relative;
+                width: 100%;
             }
         }
     }

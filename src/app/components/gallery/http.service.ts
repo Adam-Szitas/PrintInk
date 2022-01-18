@@ -1,31 +1,30 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GalleryItems } from 'src/app/interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-  private result: GalleryItems | undefined
+  private result: any
 
   constructor(
     private http: HttpClient
   ) {}
 
-    getGallery(id: string): GalleryItems | undefined{
+    getGallery(id: string): any{
 
       const httpHeader = new HttpHeaders({
         'Content-type'  : 'application/json',
         'galleryId'            : `${id}`
       })
 
-      this.http.get('https://localhost:8000/web/gallery', {headers: httpHeader}).subscribe(
+      this.http.get('http://localhost/printInk/web/gallery.php', {headers: httpHeader}).subscribe(
         (result) => {
-          this.result = result as GalleryItems
+          this.result = result
         },
         (error) => {
-          this.result = undefined
+          this.result = error
         }
       )
 

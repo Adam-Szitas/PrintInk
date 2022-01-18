@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "angular-file": "^3.6.0",
+    "cypress": "^9.2.1",
     "file-system": "^2.2.2",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",

@@ -9,39 +9,34 @@ import { ElementList, GalleryItems } from 'src/app/interfaces/interfaces';
 export class GalleryService {
 
   private pool!: GalleryItems;
-  private items!: Array<Object>;
+  private items: any = [];
   activePic!: string;
 
   private elementList!: ElementList;
 
-  getItems(){
+  get getItems(){
     return this.items;
   }
 
   constructor(
     private router: Router
-  ) { }
-
-  init(){
-
-  }
-
-  select(){
-
-  }
+  ) {}
 
   loadPicToCenter(id: string){
     // this.activePic = (this.pool?.filter( item => item.match(id))) as string;
   }
 
 
-  loadGalleryCore(galleryItems: GalleryItems){
+  loadGalleryCore(galleryItems:any){
     this.pool = galleryItems;
 
+
     for(let i = 0; i < this.pool.items.length; i++){
-      this.items[i] = new Image();
-      this.items[i] = this.pool.items
+      this.items[i] = new Image()
+      this.items[i] = this.pool.items[i]
     }
+    console.log(this.items);
+
 
     this.router.navigate(['/interface'])
   }
@@ -52,11 +47,13 @@ export class GalleryService {
 
 
 
+  //moving the gallery in a direction
   private swapSlideFromComponent = new Subject<any>();
   swapSlideFromComponent$ = this.swapSlideFromComponent.asObservable();
 
   swapSlide(direction: string){
       this.swapSlideFromComponent.next(direction)
   }
+
 
 }

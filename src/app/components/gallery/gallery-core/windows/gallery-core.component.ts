@@ -31,7 +31,7 @@ export class GalleryCoreComponent implements OnInit {
     let galleryId: string = ($event.target as HTMLElement).attributes.getNamedItem('data-cover-id')?.value as string
 
     if(galleryId) {
-      let gallery: GalleryItems | undefined = this.httpService.getGallery(galleryId);
+      let gallery: any = this.httpService.getGallery(galleryId);
 
       if(gallery){
         this.galleryService.loadGalleryCore(gallery)

@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, PlatformRef, ViewChild } from '@angular/core';
 import { ElementList } from 'src/app/interfaces/interfaces';
 import { GalleryService } from '../../gallery-service.service';
 
@@ -13,13 +13,14 @@ import { GalleryService } from '../../gallery-service.service';
       //in case next
       state('next', style({
         'opacity': '0',
-
+        'z-index': '1',
+        'left': '0'
       })),
       state('default',style({
         'height': '50%',
         'width': '350px',
         'left': '0',
-        'margin-left': '10px',
+        'margin-left': '15px',
         'z-index': '2',
         'opacity': '0'
       })),
@@ -27,7 +28,7 @@ import { GalleryService } from '../../gallery-service.service';
         'height': '50%',
         'width': '350px',
         'left': '0',
-        'margin-left': '10px',
+        'margin-left': '15px',
         'z-index': '3',
         'opacity': '1'
       })),
@@ -42,14 +43,14 @@ import { GalleryService } from '../../gallery-service.service';
         'height': '50%',
         'width': '350px',
         'left': '0',
-        'margin-left': '10px',
-        'z-index': '3'
+        'margin-left': '15px',
+        'z-index': '2'
       })),
       state('default',style({
         'height': '50%',
         'width': '350px',
         'left': '0',
-        'margin-left': '10px',
+        'margin-left': '15px',
         'z-index': '3'
       })),
       state('back',style({
@@ -70,7 +71,7 @@ import { GalleryService } from '../../gallery-service.service';
         'height': '50%',
         'width': '350px',
         'left': '0',
-        'margin-left': '10px',
+        'margin-left': '15px',
         'z-index': '3'
       })),
       state('default', style({
@@ -83,9 +84,15 @@ import { GalleryService } from '../../gallery-service.service';
       state('back', style({
         'height': '90%',
         'width': '650px',
-        'margin': '0 auto',
+        'left': '0',
+        'margin-left': '{{ marginLeft }}px',
         'z-index': '5'
-      })),
+      }),
+      {params:
+        {
+          marginLeft: (window.innerWidth - 650) /2
+        }
+      }),
       transition('default => next', animate(0)),
       transition('next => default', animate('500ms ease-in-out')),
       transition('default => back', animate(0)),
@@ -103,16 +110,26 @@ import { GalleryService } from '../../gallery-service.service';
       state('default',style({
         'height': '90%',
         'width': '650px',
-        'margin': '0 auto',
+        'left': '0',
+        'margin-left': "{{ marginLeft }}px",
         'z-index': '5'
-      })),
+      }),
+      {params:
+        {
+          marginLeft: (window.innerWidth - 650) /2
+        }
+      }),
       state('back',style({
         'height': '75%',
         'width': '500px',
-        'right': '0',
-        'margin-right': '15%',
+        'left': '0',
+        'margin-left': '{{ marginLeftFromRight }}px',
         'z-index': '4'
-      })),
+      }),{
+        params: {
+          marginLeftFromRight: (window.innerWidth - 650)*0.88
+        }
+      }),
       transition('default => next', animate(0)),
       transition('next => default', animate('500ms ease-in-out')),
       transition('default => back', animate(0)),
@@ -123,9 +140,15 @@ import { GalleryService } from '../../gallery-service.service';
       state('next',style({
         'height': '90%',
         'width': '650px',
-        'margin': '0 auto',
+        'right': '0',
+        'margin-right': '{{ marginLeft }}px',
         'z-index': '5'
-      })),
+      }),
+      {params:
+        {
+          marginLeft: (window.innerWidth - 650) /2
+        }
+      }),
       state('default',style({
         'height': '75%',
         'width': '500px',
@@ -137,7 +160,7 @@ import { GalleryService } from '../../gallery-service.service';
         'height': '50%',
         'width': '350px',
         'right': '0',
-        'margin-right': '10px',
+        'margin-right': '15px',
         'z-index': '3'
       })),
       transition('default => next', animate(0)),
@@ -158,11 +181,15 @@ import { GalleryService } from '../../gallery-service.service';
         'height': '50%',
         'width': '350px',
         'right': '0',
-        'margin-right': '10px',
+        'margin-right': '15px',
         'z-index': '3'
       })),
       state('back', style({
-        'opacity': '0'
+        'opacity': '0',
+        'z-index': '2',
+        'right': '0',
+        'height': '50%',
+        'width': '350px'
       })),
       transition('default => next', animate(0)),
       transition('next => default', animate('500ms ease-in-out')),
@@ -174,18 +201,25 @@ import { GalleryService } from '../../gallery-service.service';
       state('next', style({
         'opacity': '1',
         'width': '350px',
-        'z-index': '3'
+        'z-index': '3',
+        'right': '0',
+        'margin-right': '15px',
+        'height': '50%'
       })),
       state('default',style({
         'opacity': '0',
         'height': '50%',
         'width': '350px',
         'right': '0',
-        'margin-right': '10px',
-        'z-index': '3',
+        'margin-right': '15px',
+        'z-index': '2',
       })),
       state('back', style({
-        'opacity': '0'
+        'opacity': '0',
+        'z-index': '1',
+        'right': '0',
+        'margin-right': '15px',
+        'height': '50%'
       })),
       transition('default => next', animate(0)),
       transition('next => default', animate('500ms ease-in-out')),
@@ -195,6 +229,8 @@ import { GalleryService } from '../../gallery-service.service';
   ]
 })
 export class InterfaceComponent implements OnInit {
+  calculatedMarginLeft: number = 0;
+  calculatedMarginLeftFromRight: number = window.innerWidth - 650;
 
   leftHidden!: string
   left!: string
@@ -215,37 +251,59 @@ export class InterfaceComponent implements OnInit {
   public rightHiddenVar: any;
 
   updateVariables(){
-    // this.leftHiddenVar = {
-    //   src: this.images[this.activeCenter - 3].src ? this.images[this.activeCenter - 3].src : this.images[this.images.length - 2].src
-    // }
-    // this.leftVar = {
-    //   src: this.images[this.activeCenter - 2].src ? this.images[this.activeCenter - 2].src : this.images[this.images.length - 1].src
-    // }
-    // this.leftCenterVar = {
-    //   src: this.images[this.activeCenter - 1].src ? this.images[this.activeCenter - 1].src : this.images[this.images.length].src
-    // }
-    // this.centerVar = {
-    //   src: this.images[this.activeCenter].src
-    // }
-    // this.rightCenterVar = {
-    //   src: this.images[this.activeCenter + 1].src ? this.images[this.activeCenter + 1].src : this.images[0].src
-    // }
-    // this.rightVar = {
-    //   src: this.images[this.activeCenter + 2].src ? this.images[this.activeCenter + 2].src : this.images[1].src
-    // }
-    // this.rightHiddenVar = {
-    //   src: this.images[this.activeCenter + 3].src ? this.images[this.activeCenter + 3].src : this.images[2].src
-    // }
+    setTimeout(()=> {
+
+      this.leftHiddenVar = {
+        src: this.images[this.activeCenter - 3] ? this.images[this.activeCenter - 3] : this.images[this.images.length - 3]
+      }
+      this.leftVar = {
+        src: this.images[this.activeCenter - 2] ? this.images[this.activeCenter - 2] : this.images[this.images.length - 2]
+      }
+      this.leftCenterVar = {
+        src: this.images[this.activeCenter - 1] ? this.images[this.activeCenter - 1] : this.images[this.images.length - 1]
+      }
+      this.centerVar = {
+        src: this.images[this.activeCenter]
+      }
+      this.rightCenterVar = {
+        src: this.images[this.activeCenter + 1] ? this.images[this.activeCenter + 1] : this.images[0]
+      }
+      this.rightVar = {
+        src: this.images[this.activeCenter + 2] ? this.images[this.activeCenter + 2] : this.images[1]
+      }
+      this.rightHiddenVar = {
+        src: this.images[this.activeCenter + 3] ? this.images[this.activeCenter + 3] : this.images[2]
+      }
+    },1)
   }
+
+
+  @HostListener('window:resize',['$event'])
+  onWindowResize(event: Event){
+
+    this.calculatedMarginLeft = (window.innerWidth - 650)/2;
+    this.calculatedMarginLeftFromRight = ((window.innerWidth -650)/100)*88;
+
+  }
+
+
 
   constructor(
     private galleryService: GalleryService
-  ) { }
+  ) {}
 
 
   ngOnInit(): void {
-    this.defaultByOne();
 
+    this.calculatedMarginLeft = (window.innerWidth - 650)/2;
+    this.calculatedMarginLeftFromRight = ((window.innerWidth -650)/100)*88;
+
+    this.images = this.galleryService.getItems;
+    console.log(this.images);
+
+
+
+    this.defaultByOne();
 
     this.galleryService.swapSlideFromComponent$.subscribe((direction: string) => {
       if(direction === 'left'){
@@ -254,6 +312,26 @@ export class InterfaceComponent implements OnInit {
         this.nextClicked()
       }
     });
+
+    this.updateVariables()
+  }
+
+  updateActiveCenter(direction: "left" | "right"):void{
+    console.log(direction, this.activeCenter);
+    if(direction === "left"){
+      if(this.activeCenter - 1 >= 0){
+        this.activeCenter--
+      }else{
+        this.activeCenter = (this.images.length - 1)
+      }
+    }else{
+      if(this.activeCenter + 1 < this.images.length){
+        this.activeCenter++
+      }else{
+        this.activeCenter = 0
+      }
+    }
+    this.updateVariables()
   }
 
   defaultByOne(){
@@ -267,18 +345,23 @@ export class InterfaceComponent implements OnInit {
   }
 
   nextClicked(){
-    this.nextByOne();
     setTimeout(() => {
-
+      this.nextByOne();
+    },10)
+    this.updateActiveCenter("left")
+    setTimeout(() => {
       this.defaultByOne();
-    },1)
+    },50)
   }
-  backClicked(){
-    this.backByOne();
-    setTimeout(() => {
 
+  backClicked(){
+    setTimeout(() => {
+      this.backByOne();
+    },10)
+    this.updateActiveCenter("right")
+    setTimeout(() => {
       this.defaultByOne();
-    },1)
+    },50)
   }
 
   backByOne(){
@@ -290,6 +373,7 @@ export class InterfaceComponent implements OnInit {
     this.right = 'back'
     this.rightHidden = 'back'
   }
+
   nextByOne(){
     this.leftHidden = 'next'
     this.left = 'next'
@@ -311,8 +395,6 @@ export class InterfaceComponent implements OnInit {
       right: this.right,
       rightHidden: this.rightHidden
     }
-
-
 
     this.galleryService.updateElementList(elementObject)
 
